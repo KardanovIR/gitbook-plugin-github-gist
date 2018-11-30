@@ -9,11 +9,18 @@ function githubgist(block) {
         return '';
     }
 
-    return '<script src="' + block.kwargs.link + '"></script>';
+    return '<div class="wd-github-gist">' +
+               '<script src="' + block.kwargs.link + '"></script>' +
+           '</div>';
 }
 
 
 
 module.exports = {
+    book: {
+        assets: './assets',
+        js: [],
+        css: ['github-gist.css?cacheBreaker=1']
+    },
     blocks: {githubgist}
 };
